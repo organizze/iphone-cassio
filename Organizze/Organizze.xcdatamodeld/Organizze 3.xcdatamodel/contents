@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Accounts">
+        <attribute name="created_at" optional="YES" attributeType="Date"/>
+        <attribute name="deleted_at" optional="YES" attributeType="Date"/>
+        <attribute name="flag" optional="YES" attributeType="String"/>
+        <attribute name="flag_icon" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="kind" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="none" optional="YES" attributeType="Boolean"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Tags">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="Date"/>
+        <attribute name="deleted_at" optional="YES" attributeType="Date"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" indexed="YES"/>
+        <attribute name="montly_ammount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="none" optional="YES" attributeType="Boolean"/>
+        <attribute name="parent_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="permanent" optional="YES" attributeType="Boolean"/>
+        <attribute name="translate" optional="YES" attributeType="Boolean"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Transactions">
+        <attribute name="account_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="ammount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="created_at" optional="YES" attributeType="Date"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="deleted_at" optional="YES" attributeType="Date"/>
+        <attribute name="description_" optional="YES" attributeType="String"/>
+        <attribute name="done" optional="YES" attributeType="Boolean"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" indexed="YES"/>
+        <attribute name="income" optional="YES" attributeType="Boolean"/>
+        <attribute name="mobile_record_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="observation" optional="YES" attributeType="String"/>
+        <attribute name="recurrence_uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repeat_finder" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="repeat_index" optional="YES" attributeType="String"/>
+        <attribute name="repeat_total" optional="YES" attributeType="String"/>
+        <attribute name="repeat_type" optional="YES" attributeType="String"/>
+        <attribute name="start_result" optional="YES" attributeType="Boolean"/>
+        <attribute name="synced" optional="YES" attributeType="Boolean"/>
+        <attribute name="tag_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="transfer" optional="YES" attributeType="Boolean"/>
+        <attribute name="transfer_from" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="transfer_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="transfer_to" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date"/>
+        <attribute name="user_id" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User_Config">
+        <attribute name="transactions_consider_only_done_incomes" optional="YES" attributeType="Boolean"/>
+        <attribute name="transactions_consider_only_done_outcomes" optional="YES" attributeType="Boolean"/>
+        <attribute name="transactions_set_done" optional="YES" attributeType="Boolean"/>
+        <attribute name="transactions_transfer_result" optional="YES" attributeType="Boolean"/>
+        <attribute name="transactions_transfer_result_start_month" optional="YES" attributeType="String"/>
+        <attribute name="versao_mais" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Accounts" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Tags" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="Transactions" positionX="-5607" positionY="-3546" width="128" height="435"/>
+        <element name="User_Config" positionX="-6012" positionY="-3591" width="270" height="135"/>
+    </elements>
+</model>
