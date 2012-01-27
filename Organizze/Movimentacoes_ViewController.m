@@ -653,7 +653,9 @@
 								NSArray *transactionsObject = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 								
 								if ([transactionsObject count] == 0) {
-									[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"mobile_record_id == %d", [[dict objectForKey:@"mobile_record_id"] integerValue]]];
+                                    //removed mobile_record_id and use uuid in predicate
+                                    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"uuid == %@", [[dict objectForKey:@"uuid"] integerValue]]];
+									//[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"mobile_record_id == %d", [[dict objectForKey:@"mobile_record_id"] integerValue]]];
 									transactionsObject = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 									if ([transactionsObject count] > 0) {
 										NSManagedObject *object = [transactionsObject objectAtIndex:0];
@@ -679,8 +681,13 @@
 								BOOL createNewObject = NO;
 								
 								if ([transactionsObject count] == 0) {
-									if (![[dict objectForKey:@"mobile_record_id"] isEqualToString:@""]) {
-										[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"mobile_record_id == %d", [[dict objectForKey:@"mobile_record_id"] integerValue]]];
+                                    //removed mobile_record_id and use uuid in predicate
+									//if (![[dict objectForKey:@"mobile_record_id"] isEqualToString:@""]) {
+                                    if (![[dict objectForKey:@"uuid"] isEqualToString:@""]){
+   
+										//[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"mobile_record_id == %d", [[dict objectForKey:@"mobile_record_id"] integerValue]]];
+                                        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"uuid == %@", [dict objectForKey:@"uuid"]]];
+                                         
 										transactionsObject = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 										
 										if ([transactionsObject count] == 0) {
