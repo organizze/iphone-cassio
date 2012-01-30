@@ -52,7 +52,9 @@
 
 		if ([[NSUserDefaults standardUserDefaults] objectForKey:@"CREDENTIALS"] != nil) {
 			// Lê a senha armazenada no Keychain. Se existe (4 digitos), pede a senha ao usuário
-			NSString *password = [SFHFKeychainUtils getPasswordForUsername:@"organizze" andServiceName:@"omz:software Organizze" error:NULL];
+			
+            /* Removed Password Block
+            NSString *password = [SFHFKeychainUtils getPasswordForUsername:@"organizze" andServiceName:@"omz:software Organizze" error:NULL];
 			if ([password length] == 4) {
 				Password_ViewController *anotherViewController = [[[Password_ViewController alloc] initWithNibName:@"Password_ViewController" bundle:nil] autorelease];
 				anotherViewController.askForPassword = NO;
@@ -61,6 +63,10 @@
 			} else {
 				[self initializeApp];
 			}
+             */
+            
+            [self initializeApp];
+            
 		} else {
 			[self initializeApp];
 

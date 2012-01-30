@@ -93,6 +93,7 @@
 
 	optionSync = nil;
 
+    /* Removed block
 	NSDictionary *optionBlock = [NSDictionary dictionaryWithObjectsAndKeys:
 								 @"Segurança", @"sectionTitle",
 								 @"Ative o Bloqueio por Código e sempre que acessar o App, o mesmo pedirá uma senha para proteção", @"sectionComments",
@@ -104,6 +105,8 @@
 								   nil],
 								  nil], @"rowContent",
 								 nil];
+     
+     */
 	
 	/*
 	if (!isLogged) {
@@ -122,9 +125,12 @@
 		optionBuy = nil;
 	}
 	 */
+    
+    /* Removed block
 	[self.configOptions addObject:optionBlock];
 
 	optionBlock = nil;
+    */
 
 	NSDictionary *optionMais = [NSDictionary dictionaryWithObjectsAndKeys:
 								@"", @"sectionTitle",
@@ -288,7 +294,9 @@
 		}
 	}
 
-	if (indexPath.section == 2) {
+    //Removed block
+	//if (indexPath.section == 2) {
+    if (indexPath.section == 1) {
 		whatToDo = WHATTODO_MAIS;
 		[[parser shared] setDelegate:self];
 		[[parser shared] setRequest:nil];
