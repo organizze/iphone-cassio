@@ -695,7 +695,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -710,6 +711,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PROVISIONING_PROFILE = "5D34B3BA-5913-4E12-8E70-7505B67A5BB8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6E2938EF-BF08-4481-A201-2B3B3BEA0A24";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -722,7 +725,8 @@
 					armv6,
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Webfy desenvolvimento de softwares LTDA";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = "";
@@ -731,7 +735,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4DCE6868-4921-4B3F-9581-01A2078B979E";
+				PROVISIONING_PROFILE = "5D34B3BA-5913-4E12-8E70-7505B67A5BB8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6E2938EF-BF08-4481-A201-2B3B3BEA0A24";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -745,7 +750,9 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Organizze/prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -753,6 +760,8 @@
 				INFOPLIST_FILE = Organizze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5D34B3BA-5913-4E12-8E70-7505B67A5BB8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6E2938EF-BF08-4481-A201-2B3B3BEA0A24";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -765,8 +774,9 @@
 					"$(ARCHS_STANDARD_32_BIT)",
 				);
 				CLANG_ENABLE_OBJC_ARC = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Webfy desenvolvimento de softwares LTDA";
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cassius Pacheco (CGRYDF8A67)";
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Organizze/prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -774,7 +784,8 @@
 				INFOPLIST_FILE = Organizze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "003DE339-0A05-49FA-B1E1-1354EAFBE27C";
+				PROVISIONING_PROFILE = "5D34B3BA-5913-4E12-8E70-7505B67A5BB8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6E2938EF-BF08-4481-A201-2B3B3BEA0A24";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
