@@ -56,13 +56,28 @@
 		versaoMais = [[object valueForKey:@"versao_mais"] boolValue];
 	}
 
+    /*
+     int account_id = 0;
+     [fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];
+     
+     for (NSManagedObject *object in [self.context executeFetchRequest:fetchRequest error:nil]) {
+         if ([[object valueForKey:@"none"] boolValue]) {
+            account_id = [[object valueForKey:@"id"] integerValue];
+        }
+     }
+     */ 
+    //Show only accounts not deleted and sort by name
 	int account_id = 0;
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];	
+	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"deleted_at == %@", [NSNull null]]];
+    NSSortDescriptor *sortByName = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortByName]];
+    
 	for (NSManagedObject *object in [self.context executeFetchRequest:fetchRequest error:nil]) {
-		if ([[object valueForKey:@"none"] boolValue]) {
-			account_id = [[object valueForKey:@"id"] integerValue];
-		}
+        account_id = [[object valueForKey:@"id"] integerValue];
+        break;
 	}
+     
 
 	int tag_id = 0;
 	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Tags" inManagedObjectContext:self.context]];	
