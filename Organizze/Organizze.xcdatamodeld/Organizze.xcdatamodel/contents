@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Accounts">
         <attribute name="created_at" optional="YES" attributeType="Date"/>
         <attribute name="deleted_at" optional="YES" attributeType="Date"/>
@@ -37,7 +37,6 @@
         <attribute name="done" optional="YES" attributeType="Boolean"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" indexed="YES"/>
         <attribute name="income" optional="YES" attributeType="Boolean"/>
-        <attribute name="mobile_record_id" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
         <attribute name="observation" optional="YES" attributeType="String"/>
         <attribute name="recurrence_uuid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="repeat_finder" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
@@ -66,7 +65,7 @@
     <elements>
         <element name="Accounts" positionX="160" positionY="192" width="128" height="210"/>
         <element name="Tags" positionX="160" positionY="192" width="128" height="225"/>
-        <element name="Transactions" positionX="-5607" positionY="-3546" width="128" height="435"/>
+        <element name="Transactions" positionX="-5607" positionY="-3546" width="128" height="420"/>
         <element name="User_Config" positionX="-6012" positionY="-3591" width="270" height="135"/>
     </elements>
 </model>

@@ -56,13 +56,28 @@
 		versaoMais = [[object valueForKey:@"versao_mais"] boolValue];
 	}
 
+    /*
+     int account_id = 0;
+     [fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];
+     
+     for (NSManagedObject *object in [self.context executeFetchRequest:fetchRequest error:nil]) {
+         if ([[object valueForKey:@"none"] boolValue]) {
+            account_id = [[object valueForKey:@"id"] integerValue];
+        }
+     }
+     */ 
+    //Show only accounts not deleted and sort by name
 	int account_id = 0;
-	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];	
+	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Accounts" inManagedObjectContext:self.context]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"deleted_at == %@", [NSNull null]]];
+    NSSortDescriptor *sortByName = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)] autorelease];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortByName]];
+    
 	for (NSManagedObject *object in [self.context executeFetchRequest:fetchRequest error:nil]) {
-		if ([[object valueForKey:@"none"] boolValue]) {
-			account_id = [[object valueForKey:@"id"] integerValue];
-		}
+        account_id = [[object valueForKey:@"id"] integerValue];
+        break;
 	}
+     
 
 	int tag_id = 0;
 	[fetchRequest setEntity:[NSEntityDescription entityForName:@"Tags" inManagedObjectContext:self.context]];	
@@ -125,7 +140,9 @@
 		[self.transaction setValue:@"" forKey:@"recurrence_uuid"];
 
 		[fetchRequest setEntity:[NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.context]];
-		[self.transaction setValue:[NSNumber numberWithInt:[[self.context executeFetchRequest:fetchRequest error:nil] count]] forKey:@"mobile_record_id"];
+		
+        //removed mobile_record_id
+        //[self.transaction setValue:[NSNumber numberWithInt:[[self.context executeFetchRequest:fetchRequest error:nil] count]] forKey:@"mobile_record_id"];
 		[fetchRequest release]; fetchRequest = nil;
 
 		[self.transaction setValue:[[sharedMethods shared] generateUUID] forKey:@"uuid"];
@@ -741,7 +758,8 @@
 							   [[self.transaction valueForKey:@"description_text"] description], @"description_text",
 							   [self.transaction valueForKey:@"ammount"], @"ammount",
 							   [self.transaction valueForKey:@"done"], @"done",
-							   [self.transaction valueForKey:@"mobile_record_id"], @"mobile_record_id",
+							   //removed mobile_record_id
+                               //[self.transaction valueForKey:@"mobile_record_id"], @"mobile_record_id",
 							   nil];
 
 	if ([newValues objectForKey:@"description_text"] == [NSNull null] || [[[newValues objectForKey:@"description_text"] description] isEqualToString:@""]) {
@@ -896,7 +914,8 @@
 					[managedObject setValue:[NSDate date] forKey:@"updated_at"];
 					[managedObject setValue:[NSNumber numberWithBool:NO] forKey:@"synced"];
 
-					[managedObject setValue:[newValues objectForKey:@"mobile_record_id"] forKey:@"mobile_record_id"];
+                    //removed mobile_record_id
+					//[managedObject setValue:[newValues objectForKey:@"mobile_record_id"] forKey:@"mobile_record_id"];
 
 					[managedObject setValue:[newValues objectForKey:@"account_id"] forKey:@"account_id"];
 					[managedObject setValue:[newValues objectForKey:@"tag_id"] forKey:@"tag_id"];
@@ -1292,7 +1311,8 @@
 
 							NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 							[fetchRequest setEntity:[NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.context]];
-							[recorrentTransaction setValue:[NSNumber numberWithInt:[[self.context executeFetchRequest:fetchRequest error:nil] count]] forKey:@"mobile_record_id"];
+							//removed mobile_record_id
+                            //[recorrentTransaction setValue:[NSNumber numberWithInt:[[self.context executeFetchRequest:fetchRequest error:nil] count]] forKey:@"mobile_record_id"];
 							[fetchRequest release]; fetchRequest = nil;
 
 							recorrentTransaction = nil;
